@@ -1,0 +1,40 @@
+---
+layout: default
+description: A collection of documentation and tutorials for everything you might encounter as a Web Designer at OSI.
+---
+
+			<article>
+				<h3>Welcome!</h3>
+				<p>The purpose of this site is to provide documentation for some of the wild things you might encounter while working as a Web Designer at OSI. We work in many environments - from Wordpress in PHP to CreativeQ in Ruby to server administration via the Terminal - and we don't expect you to know everything.</p>
+				<p>Most of the original documentation was written by AJ Foster (me), one of the old web developers. If you have trouble with anything you read here, please feel free to e-mail me. You can find a link to my e-mail above and below.</p>
+			</article>
+
+			<article>
+				<h3>Table of Contents</h3>
+				<p>Information about our Servers</p>
+				<ul>
+{% for post in site.categories.server %}
+					<li><a href="{{ site.url }}{{ post.url }}">{{ post.title }}</a></li>
+{% endfor %}
+				</ul>
+				
+				<p>CreativeQ, the Work Order Management System</p>
+				<ul>
+{% for post in site.categories.creativeq %}
+					<li><a href="{{ site.url }}{{ post.url }}">{{ post.title }}</a></li>
+{% endfor %}
+				</ul>
+				
+				<p>OSI Agency Sites and WordPress</p>
+				<ul>
+{% for post in site.categories.sites %}
+					<li><a href="{{ site.url }}{{ post.url }}">{{ post.title }}</a></li>
+{% endfor %}
+				</ul>
+				
+				<p>Other Tips and Tricks</p>
+				<ul>
+{% for post in site.categories.other %}
+					<li><a href="{{ site.url }}{{ post.url }}">{{ post.title }}</a></li>
+{% endfor %}
+				</ul>

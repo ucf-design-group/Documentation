@@ -1,0 +1,59 @@
+---
+---
+
+@import "normalize", "variables", "syntax"
+
+html
+
+	font-size: 16px
+
+
+body
+
+	background-color: $background
+	color: $foreground
+	font-family: $typeface
+	font-size: 100%
+	font-weight: 300
+	letter-spacing: 0.5px
+	line-height: 1.5
+
+
+header, section, footer
+	
+	margin: auto
+	max-width: 600px
+	padding: 1em
+
+
+nav
+
+	ul
+		list-style: none
+		padding: 0
+
+	li
+		display: inline-block
+
+	a
+		padding: 0 1em
+
+
+header, footer
+
+	text-align: center
+
+
+footer
+
+	font-size: 0.75em
+
+
+a
+
+	color: $accent
+	transition: color 0.5s
+
+	&:active, &:focus, &:hover
+
+		color: darken($accent, 25%)

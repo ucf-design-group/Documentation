@@ -1,0 +1,13 @@
+		<nav>
+			<ul>
+				<li><a href="{{ site.url }}">Home</a></li>
+				<li><a href="mailto:web@aj-foster.com">I need help!</a></li>
+			</ul>
+		</nav>
+
+		<header>
+			<h1>{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}</h1>
+{% if page.description %}
+			<p>{{ page.description }}</p>
+{% endif %}
+		</header>

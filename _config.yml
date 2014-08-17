@@ -1,0 +1,13 @@
+# Site settings
+title: OSI Web Documentation
+email: web@aj-foster.com
+description: "Here you can find documentation for the majority of OSI Web."
+baseurl: "/docs"
+url: "http://sdesosiwebdev1.sdes.ucf.edu/docs"
+
+# Build settings
+markdown: kramdown
+permalink: none
+
+sass:
+  sass_dir: css
