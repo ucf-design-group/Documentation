@@ -30,7 +30,8 @@ Here's how you connect to the development server (replacing <SDES Account> with 
 ssh <SDES Account>@sdesosiwebdev1.sdes.ucf.edu
 {% endhighlight %}
 
-As you type your password, no characters will appear. That's normal. Once you log in, you'll something similar to this:
+As you type your password, no characters will appear. This is just a built in safety feature Linux incorperates by default. Once you log in, you’ll something similar to this:
+
 
 {% highlight bash %}
 Welcome to Ubuntu 12.04.4 LTS (GNU/Linux 3.5.0-49-generic x86_64)
@@ -88,7 +89,8 @@ You can learn more about Apache [over here]({{ site.url }}/server/apache.html)
 
 Apache interfaces with PHP quite easily using the `libapache2-mod-php5` package. PHP, by itself, is just a language that can be used to run files; Apache has to supply PHP the files and serve the resulting HTML.
 
-FINDME: more info about PHP...
+If you are not already familiar with PHP, you will soon be acquainted with it whether you are working as a back-end developer or a front-end designer. Primarily the back-end developer will have to be more versed in PHP than the front-end designer, but it comes into play for both roles. Because most of our sites are run using WordPress, a content management system (CMS) built in PHP, it should be no suprise that this is the language you can expect to be coding in for a fair amount of the time. PHP is an extremely flexible language, allowing for writing applications and scripts in some of the more common high-level programming paradigms, functional and object-oriented (OOP) programming (more info on [OOP](http://en.wikipedia.org/wiki/Object-oriented_programming "OOP") and [functional](http://en.wikipedia.org/wiki/Functional_programming "Functional Programming") programming styles). Of ourse there are several more coding paradigms, but these are usally the ones that you will be using when approaching projects that you will be presented in your current position. While it is highly reccomended to make your code more modular by using OOP practices, this can take a bit longer, especially if your are not familiar with the concepts ([learn more about OOP conventions here](http://sdesosiwebdev1.sdes.ucf.edu/docs/server/programming-conventions.html "OOP Conventions")).
+
 
 Similarly, MySQL is just a database to store information; the package `php5-mysql` allows PHP to access and manipulate the information. In reality, we only use MySQL because Wordpress requires it.
 
@@ -106,9 +108,15 @@ Head [over here]({{ site.url }}/server/file-permissions.html) to learn more abou
 
 ### 5. Transferring Files
 
-As a matter of security, FTP is not intalled on either server. This shouldn't matter, however, as you can use SFTP to connect and transfer files using your SSH login.
+As a matter of security, the descision has been made to not use FTP as our protcol of transferring files from workstation -> server, etc. Instead, we employ Safe File Transfer Protocol (SFTP) using Samba (more information needed here).
 
-We recommend spending the money to get [Transmit](http://panic.com/transmit/); you won't be disappointed. There are free FTP tools like [FileZilla](https://filezilla-project.org/) that you can use.
+We have found that it is easier to mount the server directory as a drive on the workstations upon login rather than having to login using a client every time you hop on the computer. We do this by running a custom script every time a user logs in. If you don't already have this setup, here's what you want to do:
+
+
+* Connect to the graphics server (use Command + K to open the Connect to Server application and connect using your SSH login information.
+* Navigate to /docs/files and copy mount_drives.app to your local workstation's documents folder.
+* Open System Preferences (Apple button top left of the monitor > System Preferences) and navigate to Users and Groups.
+* In the main window, the default view will be Password; you want Login Items. Drag and drop that mount_drives.app file into the window and make sure there's a checkmark next to it so it runs at startup
 
 Here's an example of the settings you need to transfer files to the development server:
 
