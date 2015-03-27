@@ -43,7 +43,7 @@ SDES account passwords have to be changed using one of the Windows computers in 
 Once your account is given access to the server, there are some things you'll have to do in order to work effectively. First, you'll have to add yourself to the `www` and `rvm` groups in order to work on web files:
 
 {% highlight bash %}
-sudo usermod -a -G www <username>
+sudo usermod -a -G www-data <username>
 sudo usermod -a -G rvm <username>
 {% endhighlight %}
 
